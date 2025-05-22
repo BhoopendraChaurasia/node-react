@@ -1,4 +1,5 @@
 import {  useEffect, useState } from "react";
+import Button from "./Button";
 
 
 
@@ -14,7 +15,7 @@ function User() {
   useEffect(() => {
     fetch('http://localhost:3000')
       .then(response => response.json())
-      .then(( { user } ) => setUser(user))
+      .then(({ user }) => setUser(user))
   }, []);
 
   return (
@@ -22,6 +23,7 @@ function User() {
       <h1>{user.name}</h1>
       <h1>{user.email}</h1>
       <h1>{user.age}</h1>
+      <Button />
     </>)
 }
 
